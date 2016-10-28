@@ -87,6 +87,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Service\MovieService.cs" />
+    <Compile Include="Service\ServiceBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -149,6 +151,16 @@
     <Resource Include="Assets\list.png" />
     <Resource Include="Assets\pro.png" />
     <Resource Include="Assets\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XDATA.Data\XDATA.Data.csproj">
+      <Project>{b8f23359-37a6-477d-9ab9-2fb06e751991}</Project>
+      <Name>XDATA.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XDATA.Infrastructure\XDATA.Infrastructure.csproj">
+      <Project>{6d9f9615-7716-4cc1-8588-47e9a3138e9d}</Project>
+      <Name>XDATA.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

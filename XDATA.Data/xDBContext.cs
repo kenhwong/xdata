@@ -8,11 +8,11 @@ namespace XDATA.Data
 
     public class xDbContext : DbContext
     {
-        public virtual DbSet<Model.Movie> Movies { get; set; }
-        public virtual DbSet<Model.Star> Stars { get; set; }
+        public virtual DbSet<Movie> Movies { get; set; }
+        public virtual DbSet<Star> Stars { get; set; }
         //public virtual DbSet<Model.Perform> Performs { get; set; }
-        public virtual DbSet<Model.AvatarFile> AvatarFiles { get; set; }
-        public virtual DbSet<Model.SampleFile> SampleFile { get; set; }
+        public virtual DbSet<AvatarFile> AvatarFiles { get; set; }
+        public virtual DbSet<SampleFile> SampleFile { get; set; }
 
         static xDbContext()
         {
