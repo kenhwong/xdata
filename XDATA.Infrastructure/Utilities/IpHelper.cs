@@ -5,7 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MvcSolution
+namespace XDATA
 {
     public static class IpHelper
     {

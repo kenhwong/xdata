@@ -2,7 +2,7 @@
 using System.Reflection;
 using Microsoft.Practices.Unity;
 
-namespace MvcSolution
+namespace XDATA
 {
     public class Ioc
     {

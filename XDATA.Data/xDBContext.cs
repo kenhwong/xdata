@@ -1,11 +1,14 @@
+using System;
+using System.Data.Entity;
+using System.Linq;
+using System.Reflection;
+using System.Configuration;
+using System.Data.Entity.ModelConfiguration;
+using System.Data.Entity.Validation;
+using System.Text;
+
 namespace XDATA.Data
 {
-    using System;
-    using System.Data.Entity;
-    using System.Linq;
-    using System.Reflection;
-    using System.Data.Entity.ModelConfiguration;
-
     public class xDbContext : DbContext
     {
         public virtual DbSet<Movie> Movies { get; set; }
@@ -13,6 +16,7 @@ namespace XDATA.Data
         //public virtual DbSet<Model.Perform> Performs { get; set; }
         public virtual DbSet<AvatarFile> AvatarFiles { get; set; }
         public virtual DbSet<SampleFile> SampleFile { get; set; }
+        public virtual DbSet<Setting> Settings { get; set; }
 
         static xDbContext()
         {
@@ -40,9 +44,31 @@ namespace XDATA.Data
         }
 
 
-        // Add a DbSet for each entity type that you want to include in your model. For more information 
-        // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
+        public static string GetConnectionString()
+        {
+            return ConfigurationManager.ConnectionStrings["xconn"].ConnectionString;
+        }
 
-        // public virtual DbSet<MyEntity> MyEntities { get; set; }
+
+        public override int SaveChanges()
+        {
+            try
+            {
+                return base.SaveChanges();
+            }
+            catch (DbEntityValidationException ex)
+            {
+                var sb = new StringBuilder();
+                foreach (var error in ex.EntityValidationErrors)
+                {
+                    foreach (var item in error.ValidationErrors)
+                    {
+                        sb.AppendLine(item.PropertyName + ": " + item.ErrorMessage);
+                    }
+                }
+                Logger.Error("SaveChanges.DbEntityValidation", ex.GetAllMessages() + sb);
+                throw;
+            }
+        }
     }    
 }

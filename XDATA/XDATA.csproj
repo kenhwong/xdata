@@ -87,8 +87,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Service\MovieService.cs" />
-    <Compile Include="Service\ServiceBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -97,15 +95,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Service\dbcontext.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\xmapping.cs" />
-    <Compile Include="Model\xmodels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -160,6 +155,10 @@
     <ProjectReference Include="..\XDATA.Infrastructure\XDATA.Infrastructure.csproj">
       <Project>{6d9f9615-7716-4cc1-8588-47e9a3138e9d}</Project>
       <Name>XDATA.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XDATA.Services\XDATA.Services.csproj">
+      <Project>{b7e98159-290d-44f3-b8f1-c4ea7eddaf10}</Project>
+      <Name>XDATA.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

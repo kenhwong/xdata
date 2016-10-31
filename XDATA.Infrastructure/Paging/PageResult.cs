@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace MvcSolution
+namespace XDATA
 {
     public class PageResult
     {
@@ -89,7 +89,7 @@ namespace MvcSolution
     }
 }
 
-namespace MvcSolution
+namespace XDATA
 {
     public static class PageResultExtension
     {

@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Timers;
 
-namespace MvcSolution
+namespace XDATA
 {
     public class FileLogger
     {

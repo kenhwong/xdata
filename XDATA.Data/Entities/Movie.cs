@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace XDATA.Data
 {
-    class Movie : EntityBase
+    public class Movie : EntityBase
     {
         //public Guid M_UID { get; set; }
         public string M_ReleaseID { get; set; }

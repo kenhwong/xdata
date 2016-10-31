@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace MvcSolution
+namespace XDATA
 {
     public static class Serializer
     {

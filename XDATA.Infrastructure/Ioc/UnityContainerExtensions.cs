@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.Practices.Unity;
 
-namespace MvcSolution
+namespace XDATA
 {
     public static class UnityContainerExtensions
     {

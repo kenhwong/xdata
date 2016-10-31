@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace MvcSolution
+namespace XDATA
 {
     public static class OrderByExpression
     {

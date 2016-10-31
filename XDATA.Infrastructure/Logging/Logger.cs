@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Web;
 
-namespace MvcSolution
+namespace XDATA
 {
     public class Logger
     {

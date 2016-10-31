@@ -7,7 +7,7 @@ using System.IO;
 
 namespace XDATA.Data
 {
-    class SampleFile : EntityBase
+    public class SampleFile : EntityBase
     {
         //public Guid SF_UID { get; set; }
         public Guid SF_M_UID { get; set; }

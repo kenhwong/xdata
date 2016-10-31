@@ -7,7 +7,7 @@ using System.IO;
 
 namespace XDATA.Data
 {
-    class AvatarFile : EntityBase
+    public class AvatarFile : EntityBase
     {
         //public Guid AF_S_UID { get; set; }
         public virtual Star AF_Star { get; set; }
@@ -34,4 +34,4 @@ namespace XDATA.Data
         }
     }
 }
-}
+

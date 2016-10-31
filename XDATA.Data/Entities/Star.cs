@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XDATA.Data
 {
-    class Star : EntityBase
+    public class Star : EntityBase
     {
         //public Guid S_UID { get; set; }
         public string S_JName { get; set; }
@@ -32,5 +32,24 @@ namespace XDATA.Data
         {
             this.S_JName = jname.Trim();
         }
+        /*
+        public IQueryable<Star> WhereByKeyword(IQueryable<Star> query, string keyword)
+        {
+            if (string.IsNullOrWhiteSpace(keyword))
+            {
+                return query;
+            }
+            return from a in query
+                   where a.CName.Contains(keyword)
+                         || a.JName.Contains(keyword)
+                         || a.EName.Contains(keyword)
+                   select a;
+        }
+
+        public string GetJName(IQueryable<Star> query, Guid uid)
+        {
+            return query.Where(x => x.UID == uid).Select(x => x.S_JName).FirstOrDefault();
+        }
+        */
     }
 }

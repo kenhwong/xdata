@@ -1,5 +1,5 @@
 ﻿
-namespace MvcSolution
+namespace XDATA
 {
     public static class IoHelper
     {

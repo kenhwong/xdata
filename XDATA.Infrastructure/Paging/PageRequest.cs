@@ -1,4 +1,4 @@
-﻿namespace MvcSolution
+﻿namespace XDATA
 {
     public class PageRequest
     {

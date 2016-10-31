@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using XDATA.Data;
 
 namespace XDATA
 {
@@ -26,13 +27,13 @@ namespace XDATA
             InitDatabase();
         }
 
-        List<Model.Movie> _m_list;
+        List<Movie> _m_list;
         void InitDatabase()
         {
             using (var xcontext = new xDbContext())
             {
                 xcontext.Database.Initialize(true);
-                Model.Movie _m = new Model.Movie()
+                Data.Movie _m = new Movie()
                 {
                     //M_UID = Guid.NewGuid(),
                     M_ReleaseID = "AAA-021",
@@ -44,7 +45,7 @@ namespace XDATA
 
                 _m_list = (from m in xcontext.Movies
                           orderby m.M_ReleaseID
-                          select m).ToList<Model.Movie>();
+                          select m).ToList<Movie>();
 
             }
         }
