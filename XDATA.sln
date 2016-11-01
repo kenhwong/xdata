@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XDATA.Services", "XDATA.Ser
 		{B8F23359-37A6-477D-9AB9-2FB06E751991} = {B8F23359-37A6-477D-9AB9-2FB06E751991}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XDATA.Crawler", "XDATA.Crawler\XDATA.Crawler.csproj", "{3C9E9732-F82E-4A0B-A30B-ACF46100C469}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{B7E98159-290D-44F3-B8F1-C4EA7EDDAF10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7E98159-290D-44F3-B8F1-C4EA7EDDAF10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7E98159-290D-44F3-B8F1-C4EA7EDDAF10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C9E9732-F82E-4A0B-A30B-ACF46100C469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C9E9732-F82E-4A0B-A30B-ACF46100C469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C9E9732-F82E-4A0B-A30B-ACF46100C469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C9E9732-F82E-4A0B-A30B-ACF46100C469}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
