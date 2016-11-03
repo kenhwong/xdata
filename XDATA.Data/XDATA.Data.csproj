@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\AvatarFile.cs" />
+    <Compile Include="Entities\CoverFile.cs" />
     <Compile Include="Entities\Framework\EntityBase.cs" />
     <Compile Include="Entities\Framework\IValidateEntity.cs" />
     <Compile Include="Entities\VideoFile.cs" />
@@ -64,14 +65,14 @@
     <Compile Include="Entities\Setting.cs" />
     <Compile Include="Entities\Star.cs" />
     <Compile Include="EntityExtensions\EntityBaseExtensions.cs" />
-    <Compile Include="Enums\ImageSize.cs" />
-    <Compile Include="Enums\ImageType.cs" />
+    <Compile Include="Mappings\CoverFIleMapping.cs" />
     <Compile Include="Mappings\Extensions\EntityTypeConfigurationExtensions.cs" />
     <Compile Include="Mappings\AvatarFileMapping.cs" />
     <Compile Include="Mappings\SampleFileMapping.cs" />
     <Compile Include="Mappings\SettingMapping.cs" />
     <Compile Include="Mappings\MovieMapping.cs" />
     <Compile Include="Mappings\StarMapping.cs" />
+    <Compile Include="Mappings\VideoFileMapping.cs" />
     <Compile Include="xDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -95,6 +96,9 @@
     <Content Include="x86\MediaInfo.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enums\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

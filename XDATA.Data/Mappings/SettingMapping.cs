@@ -1,4 +1,5 @@
-﻿using System.Data.Entity.ModelConfiguration;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration;
 using XDATA.Data;
 
 namespace XDATA.Data.Mappings
@@ -8,9 +9,9 @@ namespace XDATA.Data.Mappings
         public SettingMapping()
         {
             ToTable("Settings");
-            HasKey(sf => sf.UID);
-            Property(x => x.Key).IsRequired().HasMaxLength(100);
-            Property(x => x.Notes).HasMaxLength(250);
+            HasKey(s => s.UID).Property(s => s.UID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(s => s.Key).IsRequired().HasMaxLength(100);
+            Property(s => s.Notes).HasMaxLength(250);
         }
     }
 }
