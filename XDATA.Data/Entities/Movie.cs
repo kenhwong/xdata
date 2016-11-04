@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.IO;
+using MediaInfoDotNet;
 
 namespace XDATA.Data
 {
@@ -32,20 +34,38 @@ namespace XDATA.Data
         public Movie()
         {
             this.UID = Guid.NewGuid();
-        }
-
-        public Movie(string releaseid) : this()
-        {
-            M_ReleaseID = releaseid.Trim();
             if (M_VideoFiles.Count > 0)
             {
                 M_Duration = M_VideoFiles.Sum(vf => vf.VF_Duration);
                 M_FileSize = M_VideoFiles.Sum(vf => vf.VF_FileSize);
                 M_MIME = M_VideoFiles.First().VF_VideoMIME;
             }
-
         }
 
+        public Movie(string releaseid) : this()
+        {
+            M_ReleaseID = releaseid.Trim();
+        }
 
+        public Movie(FileInfo sourceFI) : this()
+        {
+            M_SourcePath = sourceFI.DirectoryName;
+            MediaFile f = new MediaFile(sourceFI.FullName);
+            if(f.HasStreams)
+            {
+                GetVideoFilesFromSource(sourceFI.Extension);
+                M_MIME = f.General.InternetMediaType;
+                M_FileSize = M_VideoFiles.Sum<VideoFile>(vf => vf.VF_FileSize);
+                M_Duration = M_VideoFiles.Sum<VideoFile>(vf => vf.VF_Duration);
+            }
+            f.General.Dispose();
+        }
+
+        private void GetVideoFilesFromSource(string strext)
+        {
+            if (M_SourcePath == null) return;
+            var vfs = Directory.EnumerateFiles(M_SourcePath, $"*.{strext}");
+            foreach (string vf in vfs) M_VideoFiles.Add(new VideoFile(vf));
+        }
     }
 }
