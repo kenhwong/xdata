@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,7 @@ namespace XDATA
             InitDatabase();
         }
 
-        List<Movie> _m_list;
+        public List<Movie> _m_list;
         void InitDatabase()
         {
             using (var xcontext = new xDbContext())
@@ -46,7 +47,7 @@ namespace XDATA
                 _m_list = (from m in xcontext.Movies
                           orderby m.M_ReleaseID
                           select m).ToList<Movie>();
-
+                //_m_list.ForEach(m => SampleList.Items.Add(m));
             }
         }
 

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.ComponentModel;
 
 namespace XDATA.Data
 {
-    public class SampleFile : EntityBase
+    public class SampleFile : EntityBase, INotifyPropertyChanged
     {
         public Guid SF_M_UID { get; set; }
         public virtual Movie SF_Movie { get; set; }
@@ -29,5 +30,7 @@ namespace XDATA.Data
             this.SF_Name = Path.GetFileName(fullname);
             this.SF_MIME = Path.GetExtension(fullname);
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

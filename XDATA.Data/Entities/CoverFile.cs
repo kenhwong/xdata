@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.ComponentModel;
 
 namespace XDATA.Data
 {
-    public class CoverFile : EntityBase
+    public class CoverFile : EntityBase, INotifyPropertyChanged
     {
         public virtual Movie CF_Movie { get; set; }
         public string CF_Name { get; set; }
@@ -29,6 +30,8 @@ namespace XDATA.Data
             this.CF_Name = Path.GetFileName(fullname);
             this.CF_MIME = Path.GetExtension(fullname);
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
 

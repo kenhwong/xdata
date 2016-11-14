@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 using System.IO;
 using MediaInfoDotNet;
 using XDATA;
+using System.ComponentModel;
 
 namespace XDATA.Data
 {
-    public class VideoFile : EntityBase
+    public class VideoFile : EntityBase, INotifyPropertyChanged
     {
         private MediaFile mf = null;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public Guid VF_M_UID { get; set; }
         public virtual Movie VF_Movie { get; set; }

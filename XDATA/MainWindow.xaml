@@ -3,30 +3,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:xdata="clr-namespace:XDATA.Data"
-        xmlns:xservice="clr-namespace:XDATA.Services"
+        xmlns:xdata="clr-namespace:XDATA.Data;assembly=XDATA.Data"
+        xmlns:xx="clr-namespace:XDATA"
+        xmlns:xservice="clr-namespace:XDATA.Services;assembly=XDATA.Services"
         xmlns:HamburgerMenu="clr-namespace:HamburgerMenu;assembly=HamburgerMenu"
         xmlns:clr="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1080">
 
+
     <Grid>
         <StackPanel Orientation="Horizontal">
-        <HamburgerMenu:HamburgerMenu MenuIconColor="White" SelectionIndicatorColor="White" MenuItemForeground="White" HorizontalAlignment="Left" Background="#FF99B4D1">
-            <HamburgerMenu:HamburgerMenu.Content>
-                <HamburgerMenu:HamburgerMenuItem Icon="Assets/home.png"  Text="Home" SelectionCommand="{Binding ElementName=this_}"/>
-                <HamburgerMenu:HamburgerMenuItem Icon="Assets/search.png" Text="Search"/>
-                <HamburgerMenu:HamburgerMenuItem Icon="Assets/favorite.png" Text="Likes"/>
-                <HamburgerMenu:HamburgerMenuItem Icon="Assets/list.png" Text="Lists"/>
-                <HamburgerMenu:HamburgerMenuItem Icon="Assets/pro.png" Text="Profile"/>
-            </HamburgerMenu:HamburgerMenu.Content>
-        </HamburgerMenu:HamburgerMenu>
-            <ListView ItemsSource="{DynamicResource _m_list}">
-                <ListView.View>
+            <HamburgerMenu:HamburgerMenu MenuIconColor="White" SelectionIndicatorColor="White" MenuItemForeground="White" HorizontalAlignment="Left" Background="#FF99B4D1">
+                <HamburgerMenu:HamburgerMenu.Content>
+                    <HamburgerMenu:HamburgerMenuItem Icon="Assets/home.png"  Text="Home" SelectionCommand="{Binding ElementName=this_}"/>
+                    <HamburgerMenu:HamburgerMenuItem Icon="Assets/search.png" Text="Search"/>
+                    <HamburgerMenu:HamburgerMenuItem Icon="Assets/favorite.png" Text="Likes"/>
+                    <HamburgerMenu:HamburgerMenuItem Icon="Assets/list.png" Text="Lists"/>
+                    <HamburgerMenu:HamburgerMenuItem Icon="Assets/pro.png" Text="Profile"/>
+                </HamburgerMenu:HamburgerMenu.Content>
+            </HamburgerMenu:HamburgerMenu>
+            
+            <ListView x:Name="SampleList" ItemsSource="{Binding _m_list}">
+               <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="RID" DisplayMemberBinding="{Binding Path=M_ReleaseID}"></GridViewColumn>
-                        <GridViewColumn Header="RNAME" CellTemplate="{Binding Path=M_ReleaseDate }"></GridViewColumn>
-                        <GridViewColumn Header="RDATE" CellTemplate="{Binding Path=M_ReleaseTitle}"></GridViewColumn>
+                        <GridViewColumn Width="100" Header="M.Id" DisplayMemberBinding="{Binding Path=M_ReleaseID}"></GridViewColumn>
+                        <GridViewColumn Width="200" Header="M.Date" DisplayMemberBinding="{Binding Path=M_ReleaseDate }"></GridViewColumn>
+                        <GridViewColumn Width="200" Header="M.Title" DisplayMemberBinding="{Binding Path=M_ReleaseTitle}"></GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>

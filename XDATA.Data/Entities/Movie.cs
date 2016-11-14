@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.IO;
 using MediaInfoDotNet;
+using System.ComponentModel;
+using PropertyChanged;
 
 namespace XDATA.Data
 {
-    public class Movie : EntityBase
+    public class Movie : EntityBase, INotifyPropertyChanged
     {
         public string M_ReleaseID { get; set; }
         public string M_ReleaseTitle { get; set; }
@@ -34,7 +36,7 @@ namespace XDATA.Data
         public Movie()
         {
             this.UID = Guid.NewGuid();
-            if (M_VideoFiles.Count > 0)
+            if (M_VideoFiles?.Count > 0)
             {
                 M_Duration = M_VideoFiles.Sum(vf => vf.VF_Duration);
                 M_FileSize = M_VideoFiles.Sum(vf => vf.VF_FileSize);
@@ -60,6 +62,8 @@ namespace XDATA.Data
             }
             f.General.Dispose();
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private void GetVideoFilesFromSource(string strext)
         {

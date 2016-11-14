@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.ComponentModel;
 
 namespace XDATA.Data
 {
-    public class AvatarFile : EntityBase
+    public class AvatarFile : EntityBase, INotifyPropertyChanged
     {
         public virtual Star AF_Star { get; set; }
         public string AF_Name { get; set; }
@@ -29,6 +30,8 @@ namespace XDATA.Data
             this.AF_Name = Path.GetFileName(fullname);
             this.AF_MIME = Path.GetExtension(fullname);
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
 
