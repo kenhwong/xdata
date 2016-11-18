@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using XDATA.Services;
+using GalaSoft.MvvmLight.Threading;
 
 namespace XDATA
 {
@@ -18,6 +19,7 @@ namespace XDATA
         {
             Ioc.RegisterInheritedTypes(typeof(ServiceBase).Assembly, typeof(ServiceBase));
             SettingContext.Instance.Init();
+            DispatcherHelper.Initialize(); //added
 
             base.OnStartup(e);
         }

@@ -61,6 +61,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\DataService.cs" />
+    <Compile Include="Context\IDataService.cs" />
+    <Compile Include="Design\DesignDataService.cs" />
     <Compile Include="Entities\AvatarFile.cs" />
     <Compile Include="Entities\CoverFile.cs" />
     <Compile Include="Entities\Framework\EntityBase.cs" />
@@ -79,7 +82,7 @@
     <Compile Include="Mappings\MovieMapping.cs" />
     <Compile Include="Mappings\StarMapping.cs" />
     <Compile Include="Mappings\VideoFileMapping.cs" />
-    <Compile Include="xDBContext.cs" />
+    <Compile Include="Context\xDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
